@@ -17,13 +17,14 @@ namespace Охрана_квартир
         {
             InitializeComponent();
         }
-
+         
         private void Form2_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "уП_ПМ_01_Неверов_ДСDataSet.User". При необходимости она может быть перемещена или удалена.
             this.userTableAdapter.Fill(this.уП_ПМ_01_Неверов_ДСDataSet.User);
             ToolTip tt = new ToolTip();
             tt.SetToolTip(textBox1, "Введите значение, которое хотите найти в таблице") ;
+            dataGridView1.AllowUserToAddRows = false;
         }
         public int i;
         public void table (int i)
@@ -69,15 +70,14 @@ namespace Охрана_квартир
         {
             int i = dataGridView1.RowCount;
             int index = dataGridView1.CurrentRow.Index;
-            if (index < i)
+            if (index>=(i-1))
+            {
+               dataGridView1.CurrentCell = dataGridView1[0, 0];
+            }
+            else
             {
                 dataGridView1.Rows[index].Selected = true;
                 dataGridView1.CurrentCell = dataGridView1[0, index + 1];
-            }
-            if (index == i)
-            {
-                dataGridView1.Rows[index].Selected = true;
-                dataGridView1.CurrentCell = dataGridView1[0, 0];
             }
         }
 
@@ -93,6 +93,18 @@ namespace Охрана_квартир
         {
             i = 0;
             table(i);
+        }
+
+        private void формаГостяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Регистрация us = new Регистрация();
+            us.Show();
+        }
+
+        private void формаКомандираToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Командир com = new Командир();
+            com.ShowDialog();
         }
     }
 }

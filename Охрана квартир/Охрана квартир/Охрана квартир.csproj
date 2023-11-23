@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,17 +67,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Гость.cs">
+    <Compile Include="Регистрация.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Гость.Designer.cs">
-      <DependentUpon>Гость.cs</DependentUpon>
+    <Compile Include="Регистрация.Designer.cs">
+      <DependentUpon>Регистрация.cs</DependentUpon>
     </Compile>
     <Compile Include="Командир.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Командир.Designer.cs">
       <DependentUpon>Командир.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Опер.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Опер.Designer.cs">
+      <DependentUpon>Опер.cs</DependentUpon>
     </Compile>
     <Compile Include="Тур_фирмаDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -94,6 +101,9 @@
     <EmbeddedResource Include="Администратор.resx">
       <DependentUpon>Администратор.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Командир.resx">
+      <DependentUpon>Командир.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="КП.resx">
       <DependentUpon>КП.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,8 +116,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Гость.resx">
-      <DependentUpon>Гость.cs</DependentUpon>
+    <EmbeddedResource Include="Регистрация.resx">
+      <DependentUpon>Регистрация.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Опер.resx">
+      <DependentUpon>Опер.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

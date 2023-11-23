@@ -126,6 +126,10 @@ namespace Охрана_квартир
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == (char)Keys.LControlKey)
+            {
+                textBox2.Text = "";
+            }
             if (e.KeyChar == (char)Keys.Enter)
             {
                 button1.Focus();
@@ -139,12 +143,19 @@ namespace Охрана_квартир
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Гость а1 = new Гость();
+            Регистрация а1 = new Регистрация();
             Hide();
             а1.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(button3, "Нажмите, чтобы оформить документ и зарегестрироваться");
+            tt.SetToolTip(pictureBox1, "Нажмите, чтобы просмотреть пароль");
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
